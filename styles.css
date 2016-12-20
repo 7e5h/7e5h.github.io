@@ -59,11 +59,11 @@ body{
 }
 .contactLink{
     text-decoration: none;
-    font-size: 120%;
+    font-size: 100%;
     text-align: left;
 }
 .contactInfo{
-    font-size: 120%;
+    font-size: 100%;
     text-align: left;
 }
 p{
@@ -83,6 +83,10 @@ a{
     font-size: 160%;
     color:aliceblue;background-color: Transparent;
 }
+.aboutBox{
+    margin: 0 auto;
+    width: 50%;
+}
 .a1{
     position: absolute;
     right:3%;
@@ -91,17 +95,17 @@ a{
 }
 .a2{
     position: absolute;
-    right:13%;
+    right:18%;
     
 }
 .a3{
     
     position: absolute;
-    right:31%;
+    right:39%;
 }
 
 @font-face {
     font-family: "ClearSans";
     src: url("../fonts/ClearSans-Light.ttf") format('trueType');
-    font-weight:lighter;
+    font-weight:100;
 }
