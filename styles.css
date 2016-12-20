@@ -22,7 +22,7 @@ body{
     width: 98%;
     border-style: solid;
     border-color: aliceblue;
-    border-width: 1px;
+    border-width: 2px;
     margin: auto
 }
 .welcomeBox{
@@ -50,7 +50,7 @@ body{
     height: 20%;
 }
 #contactTitle{
-    font-size:200%;
+    font-size:180%;
     margin-bottom: 0;
 }
 #infoTable{
@@ -70,27 +70,34 @@ p{
     color: aliceblue;
     font-family:"ClearSans" ;
 }
-a{
+button{
     color: aliceblue;
-    top: 6%;
+    top: 5%;
     font-size:160%;
-    font-family:"ClearSans" ;
-}
-#contactButton{
     font-family:"ClearSans";
     border: none;
     outline: none;
-    font-size: 160%;
-    color:aliceblue;background-color: Transparent;
+    background-color: Transparent;
+}
+#contactButton{
 }
 .aboutBox{
     margin: 0 auto;
     width: 50%;
+    position: relative;
+    top:10%;
+    text-align: right
+}
+a{
+    color: aliceblue;
+    font-family:"ClearSans";
+}
+.aboutText{
+    text-align: right;
 }
 .a1{
     position: absolute;
     right:3%;
-    top:6%;
     
 }
 .a2{

@@ -8,6 +8,16 @@
             $("#bottom").fadeOut("slow",function(){
                 $("#bottom").load("contact.html");
                 $("#bottom").fadeIn("slow");
+                $("#contactButton").css("border","2px solid white");
+                $("#aboutButton").css("border","none");
+            });
+        });
+        $("#aboutButton").click(function(){
+            $("#bottom").fadeOut("slow",function(){
+                $("#bottom").load("about.html");
+                $("#bottom").fadeIn("slow");
+                $("#contactButton").css("border","none");
+                $("#aboutButton").css("border","2px solid white");
             });
         });
     });
@@ -17,8 +27,8 @@
 <body>
     <div class="top">
         <button id="contactButton" class="a1">CONTACT</button>
-        <a class="a2">PAST PROJECTS</a>
-        <a class="a3">ABOUT</a>
+        <button id="pastButton" class="a2">PAST PROJECTS</button>
+        <button id="aboutButton" class="a3">ABOUT</button>
     </div>
     <div id="bottom">  
          <div class="welcomeBox">
@@ -30,6 +40,15 @@
                 Blah blah blah this is just for formatting. one two three four
             </p>
         </div>
+        
+        <!--<div class="aboutBox">
+            <p style="font-size:130%">About Sam</p>
+			<p class="aboutText">
+				Currently, I'm a junior at UTDallas in the computer science program. Right now I'm likely studying or working on various persional projects. Hopefully, at some point, I can find out what I'm supposed to be doing. Oftentimes you can find me longboarding around campus, attending hackathons, or fixing other people's computers. I first started in the computer science route when I first took introduction to computer science during my sophomore year of high school (thanks Mr. Cadle!). Ever since that year I have been trying to learn more and more about computer science, and I'm always looking for new projects.
+
+			</p>
+		</div>
+-->
     </div>
     
     
