@@ -1,0 +1,77 @@
+@font-face {
+    font-family: nirmala;
+    src: url(nirmala.ttf);
+}
+html{
+    padding: none;
+}
+body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+    overflow: hidden
+}
+.class{
+    
+}
+.top{
+    height: 10%;
+    width:100%;
+    padding: 0;
+    margin: 0;
+}
+.bottom{
+    height: 88%;
+    width: 98%;
+     border-style: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+    font-family: nirmala;
+    margin: auto
+}
+.welcomeBox{
+    margin: 0 auto;
+    width:40%;
+    text-align: center;
+    margin-top:30%;
+    height: 20%;
+}
+.welcomeTitle{
+    font-size:300%;
+    font-family: nirmala-ui-semilight;
+    margin-bottom: 0;
+}
+.welcomeBody{
+    font-size:100%;
+    font-family: nirmala-ui-semilight;
+    padding-top: 0;
+}
+p{
+    color: aliceblue;
+    font-family: nirmala;
+}
+a{
+    color: aliceblue;
+    font-family: nirmala;
+    font-size:150%
+}
+.a1{
+    position: absolute;
+    top: 7%;
+    right:3%;
+}
+.a2{
+    position: absolute;
+    top:7%;
+    right:11%;
+    
+}
+.a3{
+    
+    position: absolute;
+    top:7%;
+    right:26%;
+    
+    
+}
