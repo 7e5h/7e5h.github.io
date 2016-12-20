@@ -1,21 +1,36 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#bottom").fadeOut("slow",function(){
+                $("#bottom").html("I HAVEN'T WRITTEN THE OTHER PAGES YET")
+                $("#bottom").fadeIn("slow");
+            });
+        });
+    });
+    
+    </script>
 </head>
 <body>
     <div class="top">
-        <a class="a1">About</a>
+        <button id="btn1" class="a1">About</button>
         <a class="a2">Past Projects</a>
         <a class="a3">Contact</a>
     </div>
-    <div class="bottom">  
-        <div class="welcomeBox">
+    <div id="bottom">  
+         <div class="welcomeBox">
             <p class="welcomeTitle">
                 Welcome
             </p>
-            <hr style="border-style:solid;color:aliceblue;width:80%;border-bottom:1px;">
+            <hr style="border-style:solid;color:aliceblue;width:80%;border-bottom:1px;margin-top:0;">
             <p class="welcomeBody">
                 Blah blah blah this is just for formatting. one two three four
             </p>
         </div>
     </div>
+    
+    
 </body>
