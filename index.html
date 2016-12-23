@@ -1,6 +1,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="jquery.mCustomScrollbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="jquery.flip.min.js"></script>
+	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
     <meta charset="utf-8">
     <script>
     $(document).ready(function(){
@@ -9,47 +12,102 @@
                 $("#bottom").load("contact.html");
                 $("#bottom").fadeIn("slow");
                 $("#contactButton").css("border","2px solid white");
-                $("#aboutButton").css("border","none");
+				$("#contactButton").css("padding","0px");
+                $("#aboutButton").css("border","0px");
+                $("#aboutButton").css("padding","2px");
+                $("#pastButton").css("border","0px");
+                $("#pastButton").css("padding","2px");
             });
         });
         $("#aboutButton").click(function(){
             $("#bottom").fadeOut("slow",function(){
                 $("#bottom").load("about.html");
                 $("#bottom").fadeIn("slow");
-                $("#contactButton").css("border","none");
                 $("#aboutButton").css("border","2px solid white");
+                $("#aboutButton").css("padding","0px");
+                $("#contactButton").css("border","0px");  
+				$("#contactButton").css("padding","2px");
+                $("#pastButton").css("border","0px");
+                $("#pastButton").css("padding","2px");
             });
         });
+		$("#pastButton").click(function(){
+            $("#bottom").fadeOut("slow",function(){
+                $("#bottom").load("projects.html");
+                $("#bottom").fadeIn("slow");
+                $("#pastButton").css("border","2px solid white");
+                $("#pastButton").css("padding","0px");
+                $("#contactButton").css("border","0px");  
+				$("#contactButton").css("padding","2px");
+                $("#aboutButton").css("border","0px");
+                $("#aboutButton").css("padding","2px");
+            });
+        });
+//		$("#bottom").mCustomScrollbar({
+//			axis:"x",
+//			theme:"dark",
+//			setTop:"-100px"
+//		});
+//       $("#projCard1").flip({
+//		  axis: 'x',
+//		  trigger: 'hover',
+//		  reverse: true
+//		});
+		$("#pictureCard1").flip({
+		  trigger: 'manual'
+		});
+		$(".projPic").click(function(){
+			console.log("clicked?");
+			$("#projCard1").flip('toggle');
+		});
     });
-    
     </script>
 </head>
 <body>
     <div class="top">
-        <button id="contactButton" class="a1">CONTACT</button>
-        <button id="pastButton" class="a2">PAST PROJECTS</button>
-        <button id="aboutButton" class="a3">ABOUT</button>
+		<table id="topTable" border="0">
+			   <tr> 
+				   <td>
+					   <button id="contactButton" class="menuButton">CONTACT</button>
+						<button id="pastButton" class="menuButton">PAST PROJECTS</button>
+						<button id="aboutButton" class="menuButton">ABOUT</button>
+				   </td>
+			  </tr>
+		</table>
+		
+		
     </div>
+	
+	<div id="border">
+	</div>
     <div id="bottom">  
+<!--
          <div class="welcomeBox">
             <p class="welcomeTitle">
                 Welcome
             </p>
-            <hr style="border-style:solid;color:aliceblue;width:80%;border-bottom:1px;margin-top:0;">
+            <hr style="width:80%;">
             <p class="welcomeBody">
                 Blah blah blah this is just for formatting. one two three four
             </p>
         </div>
-        
-        <!--<div class="aboutBox">
-            <p style="font-size:130%">About Sam</p>
-			<p class="aboutText">
-				Currently, I'm a junior at UTDallas in the computer science program. Right now I'm likely studying or working on various persional projects. Hopefully, at some point, I can find out what I'm supposed to be doing. Oftentimes you can find me longboarding around campus, attending hackathons, or fixing other people's computers. I first started in the computer science route when I first took introduction to computer science during my sophomore year of high school (thanks Mr. Cadle!). Ever since that year I have been trying to learn more and more about computer science, and I'm always looking for new projects.
-
-			</p>
-		</div>
 -->
-    </div>
-    
-    
+		
+		
+		<div id="projects">
+			<div class="proj">
+				<div id="pictureCard1" class="projectCard">
+				 	<div class="front">
+					<img src="square.jpeg" class="bordered projPic">
+					</div> 
+					<div class="back">
+						Back content
+					 </div> 
+				</div>
+				<hr class="projectHr">
+				<p class="projectText">
+				This is a project that I worked on AND I DON'T KNOW WHY THIS WON'T WRAP</p>
+			</div>
+		</div>
+	</div>
 </body>
