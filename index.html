@@ -48,17 +48,9 @@
 //			theme:"dark",
 //			setTop:"-100px"
 //		});
-//       $("#projCard1").flip({
-//		  axis: 'x',
-//		  trigger: 'hover',
-//		  reverse: true
-//		});
-		$("#pictureCard1").flip({
-		  trigger: 'manual'
-		});
-		$(".projPic").click(function(){
-			console.log("clicked?");
-			$("#projCard1").flip('toggle');
+	$(".projectCard").flip({
+	  axis: 'x',
+	  trigger: 'hover'
 		});
     });
     </script>
@@ -81,6 +73,7 @@
 	<div id="border">
 	</div>
     <div id="bottom">  
+<!--
          <div class="welcomeBox">
             <p class="welcomeTitle">
                 Welcome
@@ -90,8 +83,34 @@
                 Blah blah blah this is just for formatting. one two three four
             </p>
         </div>
-		
-		
-		
+-->
+		<div id="projects">
+			<div class="proj">
+				<div id="pictureCard1" class="projectCard">
+				 	<div class="front">
+					<img src="square.jpeg" class="bordered projPic">
+					</div> 
+					<div class="back">
+						<img src="alt.JPG" class="bordered projPic">
+					 </div> 
+				</div>
+				<hr class="projectHr">
+				<p class="projectText">
+				All the stuff is starting to come into place, but I gotta get this flip thing to work now</p>
+			</div>
+			<div class="proj">
+				<div id="pictureCard1" class="projectCard">
+				 	<div class="front">
+					<img src="square.jpeg" class="bordered projPic">
+					</div> 
+					<div class="back">
+						<img src="alt.JPG" class="bordered projPic">
+					 </div> 
+				</div>
+				<hr class="projectHr">
+				<p class="projectText">
+				All the stuff is starting to come into place, but I gotta get this flip thing to work now</p>
+			</div>
+		</div>
 	</div>
 </body>

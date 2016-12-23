@@ -146,14 +146,13 @@ p {
 	display: inline-block;
 	float:left;}
 .projectCard{
-	width:100%;
+	width:50%;
 	height:50%;
 	margin:0 auto;
 }
  
 .projPic {
 	max-width:250px;
-	margin:0 auto; 
 }
 
 .projectHr{
@@ -167,7 +166,6 @@ p {
 	height:40%;
 	margin: 0 auto;
 	color: aliceblue;
-    word-break: break-all;
     white-space: normal;
 }
  
