@@ -44,7 +44,13 @@ body {
 	overflow: hidden;
 }
  
- 
+#bar{
+	position: absolute;
+	top:100px;
+	width:400px;
+	height:40px;
+	left:100px;
+}
 .bordered {
 	padding:3%;
 	border:2px solid white; 
@@ -59,7 +65,25 @@ body {
 	overflow: auto;
 	margin-left: -2px;
 }
- 
+#sliderBar{
+	position: absolute;
+	top:14%;
+	width:80%;
+	left:10%;
+    height: .5%;
+	color: aliceblue;
+	background-color:aliceblue;
+	display: none;
+}
+#slider{
+	position:absolute;
+	top:13%;
+	height:20px;
+	width:70px;
+	left:10%;
+	background-color: aliceblue;
+	display:none;
+}
  
 #border {
 	position: fixed;
@@ -75,7 +99,14 @@ body {
 	border-width: 2px; 
 }
  
- 
+.back{
+	position: relative;
+	top:0;
+	width:100%;
+	max-height: 250px;
+	height:auto;
+	
+}
 button {
 	color: aliceblue;
 	top: 5%;
@@ -146,13 +177,13 @@ p {
 	display: inline-block;
 	float:left;}
 .projectCard{
-	width:50%;
-	height:50%;
+	max-width:250px;
+	max-height:250px;
 	margin:0 auto;
 }
  
 .projPic {
-	max-width:250px;
+	width:100%;
 }
 
 .projectHr{
@@ -175,8 +206,8 @@ position: absolute;
 top:6%;
 height: 88%;
 width:1920px;
-display: inline-block;
 white-space: nowrap;
+display: inline-block;
 }
  
  
@@ -199,10 +230,11 @@ white-space: nowrap;
  
  
 .welcomeBox {
+	position: absolute;
 	margin: 0 auto;
-	width:40%;
+	width:30%;
 	text-align: center;
-	position: relative;
+	position: absolute;
 	top:30%;
 	height: 20%; }
  
