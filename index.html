@@ -2,7 +2,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="jquery.mCustomScrollbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script src="jquery.flip.min.js"></script>
 	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
     <meta charset="utf-8">
     <script>
@@ -31,14 +31,30 @@
 		})
 	}
 	function showPast(){
-         $("#bottom").load("projects.html");
+         $("body").load("projects.html");
 		$( "#bottom" ).load( "projects.html", function() {
 			enableFlippage("#pictureCard1");
 			enableFlippage("#pictureCard2");
 			enableFlippage("#pictureCard3");
+			$("#bottom").mCustomScrollbar({
+				axis:"x",
+				scrollbarPosition: "outside",
+			 	callbacks:{
+					whileScrolling:function(){
+						moveBarTo(this.mcs.leftPct);
+					}
+				}
+			});
+			readyButtons();
+			$("#slider").fadeIn("slow");
+			$("#sliderBar").show("slow");
+			unselect("#contactButton");
+			unselect("#aboutButton");
+			select("#pastButton");
+			var barTop = $("#sliderBar").position().top;
+			var height = document.getElementById('slider').offsetHeight;
+			$("#slider").css("top",barTop-height/2+2.5);
 		});
-		$("#slider").fadeIn("slow");
-		$("#sliderBar").show("slow");
 	}
 	function hidePast(){
 		  $( "#slider" ).fadeOut( "slow", function() {
@@ -57,46 +73,36 @@
 				$(p1).css("padding","0px");
 	}
     $(document).ready(function(){
-        $("#contactButton").click(function(){
-            $("#bottom").fadeOut("slow",function(){
-                $("#bottom").load("contact.html");
-                $("#bottom").fadeIn("slow");
-                select("#contactButton");
-				unselect("#aboutButton");
-				unselect("pastButton");
-				hidePast();
-            });
-        });
-        $("#aboutButton").click(function(){
-            $("#bottom").fadeOut("slow",function(){
-                $("#bottom").load("about.html");
-                $("#bottom").fadeIn("slow");
-                unselect("#contactButton");
-				select("#aboutButton");
-				unselect("pastButton");
-				hidePast();
-            });
-        });
-		$("#pastButton").click(function(){
-            $("#bottom").fadeOut("slow",function(){
-                showPast();
-                $("#bottom").fadeIn("slow");
-                unselect("#contactButton");
-				unselect("#aboutButton");
-				select("pastButton");
-            });
-        });
-		$("#bottom").mCustomScrollbar({
-				axis:"x",
-				scrollbarPosition: "outside",
-			 	callbacks:{
-					whileScrolling:function(){
-						moveBarTo(this.mcs.leftPct);
-					}
-				}
-		});
+        readyButtons();
       });
-		
+	function readyButtons(){
+		$("#contactButton").click(function(){
+		$("#bottom").fadeOut("slow",function(){
+			$("#bottom").load("contact.html");
+			$("#bottom").fadeIn("slow");
+			select("#contactButton");
+			unselect("#aboutButton");
+			unselect("#pastButton");
+			hidePast();
+		});
+	});
+	$("#aboutButton").click(function(){
+		$("#bottom").fadeOut("slow",function(){
+			$("#bottom").load("about.html");
+			$("#bottom").fadeIn("slow");
+			unselect("#contactButton");
+			select("#aboutButton");
+			unselect("#pastButton");
+			hidePast();
+		});
+	});
+	$("#pastButton").click(function(){
+		$("#bottom").fadeOut("slow",function(){
+			showPast();
+			$("#bottom").fadeIn();
+		});
+	});
+}
     </script>
 </head>
 <body>
