@@ -2,6 +2,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="jquery.mCustomScrollbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="typed.js"></script>
 	<script src="jquery.flip.min.js"></script>
 	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
     <meta charset="utf-8">
@@ -30,6 +31,15 @@
             $(p1).flip(false);
 		})
 	}
+	function startTyping(){
+		$("#type1").typed({
+			strings: ["^5000especially not done now, since I'm still pretty activly working on it."],
+			typeSpeed: 40,
+			 backDelay: 500,
+			backSpeed: 500,
+			  showCursor:false
+		  });
+	}
 	function showPast(){
          $("body").load("projects.html");
 		$( "#bottom" ).load( "projects.html", function() {
@@ -55,6 +65,7 @@
 			var barTop = $("#sliderBar").position().top;
 			var height = document.getElementById('slider').offsetHeight;
 			$("#slider").css("top",barTop-height/2+2.5);
+			startTyping();
 		});
 	}
 	function hidePast(){
@@ -132,7 +143,7 @@
             </p>
             <hr style="width:80%;">
             <p class="welcomeBody">
-                Blah blah blah this is just for formatting. one two three four
+                Hi and welcome to my website, I'm still working on it, but thanks for paying attention to me.
             </p>
         </div>
 

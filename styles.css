@@ -230,7 +230,10 @@ width:1920px;
 white-space: nowrap;
 display: inline-block;
 }
- 
+.type{
+	padding: none;
+	margin:none;
+}
  
 .top {
 	height: 10%;
