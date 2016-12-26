@@ -8,7 +8,9 @@ a {
 	color: aliceblue;
 	font-family:"ClearSans"; }
  
- 
+::-webkit-scrollbar { 
+display: none; 
+}
 .aboutBox {
 	margin: 0 auto;
 	width: 70%;
@@ -61,12 +63,12 @@ body {
  
 #bottom {
 	position: fixed;
-	height: 88%;
 	width: 98%;
+	height:88%;
+	top:10%;
 	left:1%;
-	overflow-x: auto;
+	overflow-x: hidden;
 	overflow-y: hidden;
-	margin-left: -2px;
 }
 #sliderBar{
 	position: absolute;
@@ -94,7 +96,7 @@ body {
 	height:88%;
 	top:10%;
 	left:1%;
-	overflow-x: auto;
+	overflow-x: hidden;
 	overflow-y: hidden;
 	margin-left:-2px;
 	border-style: solid;
@@ -151,7 +153,18 @@ hr {
 	color:aliceblue;
 	border-bottom:8px;
 	margin-top:0; }
- 
+.front{
+	height:100%;
+	
+}
+.projTitle{
+	font-size:190%;
+	margin-top: 0;
+}
+.projIcon{
+	max-width:160px;
+	margin:0 auto;
+}
  
 html { padding: none; }
  
