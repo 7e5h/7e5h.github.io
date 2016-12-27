@@ -55,7 +55,7 @@ body {
 	left:100px;
 }
 .bordered {
-	padding:3%;
+	padding:%;
 	border:2px solid white; 
 }
 #spacer
@@ -82,7 +82,7 @@ body {
 	left:10%;
     height: 5px;
 	color: aliceblue;
-	background-color:aliceblue;
+	background-color:rgba(240,248,255,.6);
 	display: none;
 }
 #slider{
@@ -91,7 +91,7 @@ body {
 	height:20px;
 	width:70px;
 	left:10%;
-	background-color: aliceblue;
+	background-color: rgba(240,248,255,.8);
 	display:none;
 }
  
@@ -105,7 +105,7 @@ body {
 	overflow-y: hidden;
 	margin-left:-2px;
 	border-style: solid;
-	border-color: aliceblue;
+	border-color: rgba(240,248,255,.6);
 	border-width: 2px; 
 }
  
@@ -169,6 +169,9 @@ hr {
 .projIcon{
 	max-width:160px;
 	margin:0 auto;
+	opacity: 0.7;
+    filter: alpha(opacity=70);
+
 }
  
 html { padding: none; }
@@ -217,7 +220,7 @@ p {
 }
 .projectText{
 	width:48%;
-	text-align: center;
+	text-align: left;
 	height:40%;
 	margin: 0 auto;
 	color: aliceblue;
@@ -241,7 +244,7 @@ display: inline-block;
 	height:80px;
 	position: absolute;
 	border: solid 2px;
-	border-color: aliceblue;
+	border-color: rgba(240,248,255,.6);
 }
 
 .type{
