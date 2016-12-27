@@ -1,22 +1,24 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" href="js/jquery.mCustomScrollbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="typed.js"></script>
-	<script src="jquery.flip.min.js"></script>
-	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/typed.js"></script>
+	<script src="js/jquery.flip.min.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <meta charset="utf-8">
     <script>
 	function moveBarTo(p1){
 		var x = document.getElementById('sliderBar').offsetWidth;
+		var width = x;
+		x*=.8;
 		var position = $("#sliderBar").position().left;
 		x-=document.getElementById('slider').offsetWidth;
 		p1/=100;
 		x = p1*x+position;
+		x+=width/10;
 		$("#slider").css("left",x);
 	}
 	function enableFlippage(p1){
-		console.log("enabling "+p1);
 		$(p1).flip({
               axis: 'y',
               trigger: 'manual',
@@ -33,7 +35,7 @@
 	}
 	function startTyping(){
 		$("#type1").typed({
-			strings: ["^5000especially not done now, since I'm still pretty activly working on it."],
+			strings: ["^4000, since I'm still pretty activly working on it."],
 			typeSpeed: 40,
 			 backDelay: 500,
 			backSpeed: 500,
@@ -46,7 +48,6 @@
 		var height =$(button).height();
 		height+=9;
 		var xPosition = $(button).offset().left;
-		
 		var yPosition = $(button).offset().top;
 		x+=4.5;
 		height+=4.5+2;
@@ -77,9 +78,8 @@
 		}
 }
 	function showPast(){
-         $("body").load("projects.html");
-		$( "#bottom" ).load( "projects.html", function() {
-		border("#pastButton",true);
+         $("body").load("projects.html", function() {
+			border("#pastButton",true);
 			enableFlippage("#pictureCard1");
 			enableFlippage("#pictureCard2");
 			enableFlippage("#pictureCard3");
@@ -93,22 +93,27 @@
 					}
 				}
 			});
+			//make buuttons clickable and show the scrollbar
 			readyButtons();
 			$("#slider").fadeIn("slow");
-			$("#sliderBar").show("slow");
+			$("#sliderBar").fadeIn("slow");
+			
+			//calculate y position for scroll knob
 			var barTop = $("#sliderBar").position().top;
 			var height = document.getElementById('slider').offsetHeight;
 			$("#slider").css("top",barTop-height/2+2.5);
+			
+			//calculate x starting position for scroll knob
+			var x = $("#sliderBar").outerWidth(true);
+			var position = $("#sliderBar").position().left;
+			$("#slider").css("left",x/10+position);
+			
 			startTyping();
 		});
 	}
 	function hidePast(){
-		  $( "#slider" ).fadeOut( "slow", function() {
-			$("#slider").css("display","none");
-		  });
-		$( "#sliderBar" ).fadeOut( "slow", function() {
-			$("#sliderBar").css("display","none");
-		  });
+		  $( "#slider" ).fadeOut( "slow");
+		  $( "#sliderBar" ).fadeOut( "slow");
 	}
     $(document).ready(function(){
         readyButtons();
