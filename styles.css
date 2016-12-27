@@ -40,9 +40,10 @@ body {
 	background-image: url("images/bg.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
-	margin:0;
+	margin-left:1%;
+	
 	height:100%;
-	width:100%;
+	width:98%;
 	overflow: hidden;
 }
  
@@ -215,7 +216,7 @@ p {
 	color: aliceblue;
 }
 .projectText{
-	width:50%;
+	width:48%;
 	text-align: center;
 	height:40%;
 	margin: 0 auto;

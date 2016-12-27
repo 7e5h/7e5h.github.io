@@ -7,6 +7,25 @@
 	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <meta charset="utf-8">
     <script>
+	var page = 0;
+	function resize(){
+		switch(page){
+			case 1:
+				border("#contactButton",true);
+				break;
+			case 2:
+				console.log("reized");
+				var barTop = $("#sliderBar").position().top;
+				var height = document.getElementById('slider').offsetHeight;
+				$("#slider").css("top",barTop-height/2+2.5);
+				border("#pastButton",true);
+				break;
+			case 3:
+				border("#aboutButton",true);
+				break;
+		}
+		
+	}
 	function moveBarTo(p1){
 		var x = document.getElementById('sliderBar').offsetWidth;
 		var width = x;
@@ -35,7 +54,7 @@
 	}
 	function startTyping(){
 		$("#type1").typed({
-			strings: ["^4000, since I'm still pretty activly working on it."],
+			strings: [", since I'm still pretty activly working on it."],
 			typeSpeed: 40,
 			 backDelay: 500,
 			backSpeed: 500,
@@ -76,7 +95,7 @@
 			display:"inline"
 			});
 		}
-}
+	}
 	function showPast(){
          $("body").load("projects.html", function() {
 			border("#pastButton",true);
@@ -117,7 +136,8 @@
 	}
     $(document).ready(function(){
         readyButtons();
-			$(button).hide();
+		resize();
+		$("#selectionBox").hide();
       });
 	function readyButtons(){
 		$("#contactButton").click(function(){
@@ -126,6 +146,8 @@
 			$("#bottom").fadeIn("slow");
 			hidePast();
 			border("#contactButton",false);
+			page =1;
+			resize();
 		});
 	});
 	$("#aboutButton").click(function(){
@@ -134,6 +156,8 @@
 			$("#bottom").fadeIn("slow");
 			border("#aboutButton",false);
 			hidePast();
+			page=3;
+			resize();
 		});
 	});
 	$("#pastButton").click(function(){
@@ -142,11 +166,13 @@
 			showPast();
 			$("#bottom").fadeIn();
 		});
+		page = 2;
+		resize();
 	});
 }
     </script>
 </head>
-<body>
+<body onresize="resize()">
     <div class="top">
 		<div id="selectionBox"></div>
 		<table id="topTable" border="0">
