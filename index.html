@@ -40,9 +40,46 @@
 			  showCursor:false
 		  });
 	}
+	function border(button, immediate){
+		var x =$(button).width();
+		x+=9;
+		var height =$(button).height();
+		height+=9;
+		var xPosition = $(button).offset().left;
+		
+		var yPosition = $(button).offset().top;
+		x+=4.5;
+		height+=4.5+2;
+		yP = .5*height;
+		yPosition+=yP-yP/2;
+		height=yP;
+		if(!$("#selectionBox").is(":visible"))
+			immediate=true;
+		if(immediate){	
+			$("#selectionBox").show();
+			$( "#selectionBox" ).css({
+				left: xPosition,
+				width:x,
+				height:height,
+				top:yPosition,
+				display:"inline"
+			  });
+			$("#selectionBox").show();
+		}
+		else{
+			$( "#selectionBox" ).animate({
+			left: xPosition,
+			width:x,
+			height:height,
+			top:yPosition,
+			display:"inline"
+			});
+		}
+}
 	function showPast(){
          $("body").load("projects.html");
 		$( "#bottom" ).load( "projects.html", function() {
+		border("#pastButton",true);
 			enableFlippage("#pictureCard1");
 			enableFlippage("#pictureCard2");
 			enableFlippage("#pictureCard3");
@@ -59,9 +96,6 @@
 			readyButtons();
 			$("#slider").fadeIn("slow");
 			$("#sliderBar").show("slow");
-			unselect("#contactButton");
-			unselect("#aboutButton");
-			select("#pastButton");
 			var barTop = $("#sliderBar").position().top;
 			var height = document.getElementById('slider').offsetHeight;
 			$("#slider").css("top",barTop-height/2+2.5);
@@ -76,39 +110,29 @@
 			$("#sliderBar").css("display","none");
 		  });
 	}
-	function unselect(p1){
-                $(p1).css("border","0px");
-                $(p1).css("padding","2px");
-	}
-	function select(p1){
-                $(p1).css("border","2px solid white");
-				$(p1).css("padding","0px");
-	}
     $(document).ready(function(){
         readyButtons();
+			$(button).hide();
       });
 	function readyButtons(){
 		$("#contactButton").click(function(){
 		$("#bottom").fadeOut("slow",function(){
 			$("#bottom").load("contact.html");
 			$("#bottom").fadeIn("slow");
-			select("#contactButton");
-			unselect("#aboutButton");
-			unselect("#pastButton");
 			hidePast();
+			border("#contactButton",false);
 		});
 	});
 	$("#aboutButton").click(function(){
 		$("#bottom").fadeOut("slow",function(){
 			$("#bottom").load("about.html");
 			$("#bottom").fadeIn("slow");
-			unselect("#contactButton");
-			select("#aboutButton");
-			unselect("#pastButton");
+			border("#aboutButton",false);
 			hidePast();
 		});
 	});
 	$("#pastButton").click(function(){
+		border("#pastButton",false);
 		$("#bottom").fadeOut("slow",function(){
 			showPast();
 			$("#bottom").fadeIn();
@@ -119,6 +143,7 @@
 </head>
 <body>
     <div class="top">
+		<div id="selectionBox"></div>
 		<table id="topTable" border="0">
 			   <tr> 
 				   <td>

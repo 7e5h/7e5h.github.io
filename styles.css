@@ -178,7 +178,9 @@ html { padding: none; }
 	table-layout: fixed; }
  
  
-.menuButton { padding:2px; }
+.menuButton { 
+	font-size: 120%;
+	padding:9px; }
  
  
 p {
@@ -230,6 +232,17 @@ width:1920px;
 white-space: nowrap;
 display: inline-block;
 }
+
+#selectionBox{
+	position: absolute;
+	display: none;
+	width:40px;
+	height:80px;
+	position: absolute;
+	border: solid 2px;
+	border-color: aliceblue;
+}
+
 .type{
 	padding: none;
 	margin:none;
@@ -244,8 +257,11 @@ display: inline-block;
  
 #topTable {
 	position: fixed;
-	top:4%;
-	right:1%; }
+	top:5.4%;
+	right:1%;
+	width:40%;
+	text-align: right;
+}
  
  
 .welcomeBody {
